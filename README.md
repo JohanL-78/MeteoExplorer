@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌍 Meteo Explorer
 
-## Getting Started
+Une application météorologique interactive avec un globe 3D immersif construit avec Next.js et react-globe.gl.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-15.5-black)
+![React](https://img.shields.io/badge/React-19.1-blue)
+![Three.js](https://img.shields.io/badge/Three.js-3D-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)
+
+## ✨ Fonctionnalités
+
+- 🌍 **Globe 3D interactif** avec navigation fluide
+- 🌡️ **Données météo en temps réel** (température, vent, précipitations)
+- 📅 **Prévisions 7 jours** détaillées
+- 🌙 **Mode jour/nuit** avec textures dynamiques
+- 📱 **Interface responsive** (mobile & desktop)
+- 🔍 **Recherche de villes** avec géocodage
+- ⚡ **Animations fluides** avec Framer Motion
+
+## 🚀 Technologies utilisées
+
+- **Frontend :** Next.js 15, React 19, TypeScript
+- **3D :** react-globe.gl, Three.js
+- **Styling :** Tailwind CSS, Framer Motion
+- **Icons :** Lucide React
+- **APIs :** Open-Meteo (météo), OpenStreetMap Nominatim (géocodage)
+- **Déploiement :** Vercel
+- **Analytics :** Vercel Analytics
+
+## 🛠️ Installation
 
 ```bash
+# Cloner le repository
+git clone https://github.com/johanlorck/threeglobe.git
+cd threeglobe
+
+# Installer les dépendances
+npm install
+
+# Lancer en développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrir [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Scripts disponibles
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev      # Développement
+npm run build    # Build de production
+npm run start    # Démarrer en production
+npm run lint     # Linter ESLint
+```
 
-## Learn More
+## 🎯 Utilisation
 
-To learn more about Next.js, take a look at the following resources:
+1. **Navigation :** Cliquez et faites glisser pour explorer le globe
+2. **Météo :** Cliquez sur n'importe quel point pour obtenir les données météo
+3. **Recherche :** Utilisez la barre de recherche pour trouver une ville
+4. **Mode nuit :** Basculez entre les textures jour/nuit
+5. **Mobile :** Menu adaptatif avec vue étendue des détails météo
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 APIs utilisées
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **[Open-Meteo](https://open-meteo.com/)** - Données météorologiques gratuites
+- **[OpenStreetMap Nominatim](https://nominatim.org/)** - Service de géocodage
 
-## Deploy on Vercel
+## 🎨 Fonctionnalités techniques
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Lazy Loading :** Chargement différé du composant 3D pour optimiser les performances
+- **Responsive Design :** Interface adaptée à tous les écrans
+- **Gestion d'erreurs :** Fallbacks pour les zones sans données (océans, déserts)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+## 🙏 Remerciements
+
+- **[Vasturiano](https://github.com/vasturiano)** - Créateur de globe.gl et react-globe.gl
+- **[Open-Meteo](https://open-meteo.com/)** - API météorologique gratuite
+- **[OpenStreetMap](https://www.openstreetmap.org/)** - Données géographiques ouvertes
+- **[Three.js Community](https://threejs.org/)** - Écosystème de visualisation 3D
+
+## 👨‍💻 Auteur
+
+**Johan Lorck**  
+GitHub: [@johanlorck](https://github.com/johanlorck)
+
+---
+
+⭐ Si ce projet vous plaît, n'hésitez pas à lui donner une étoile !
