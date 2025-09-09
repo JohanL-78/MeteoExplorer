@@ -38,7 +38,12 @@ export default function Home() {
   const [query, setQuery] = useState("");
   const [windSpeed, setWindSpeed] = useState<number | null>(null);
   const [precipitation, setPrecipitation] = useState<number | null>(null);
-  const [forecast, setForecast] = useState<any[]>([]);
+  const [forecast, setForecast] = useState<Array<{
+    date: string;
+    tempMax: number;
+    tempMin: number;
+    precipitation: number;
+  }>>([]);
   const [isMenuVisible, setIsMenuVisible] = useState<boolean>(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const [isDayMode, setIsDayMode] = useState<boolean>(true);
