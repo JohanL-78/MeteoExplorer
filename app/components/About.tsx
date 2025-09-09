@@ -90,7 +90,7 @@ export default function About({ onClose }: { onClose: () => void }) {
                         Créé par Johan Lorck
                     </p>
                     <a 
-                        href="https://github.com/johanlorck" 
+                        href="https://github.com/JohanL-78/MeteoExplorer.git" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="inline-block px-4 py-2 border border-cyan-400 rounded text-cyan-300 hover:bg-cyan-400 hover:text-white transition-all duration-300">

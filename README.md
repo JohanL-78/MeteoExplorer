@@ -31,7 +31,7 @@ Une application météorologique interactive avec un globe 3D immersif construit
 
 ```bash
 # Cloner le repository
-git clone https://github.com/johanlorck/threeglobe.git
+git clone https://github.com/JohanL-78/MeteoExplorer.git
 cd threeglobe
 
 # Installer les dépendances
