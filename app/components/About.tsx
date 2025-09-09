@@ -6,7 +6,7 @@ export default function About({ onClose }: { onClose: () => void }) {
             <div className="bg-black border border-cyan-400 rounded-lg p-8 max-w-2xl max-h-[80vh] overflow-y-auto" 
                  style={{ color: 'rgba(0,255,255, 0.87)', boxShadow: '0 0 20px rgba(0,255,255, 0.3)' }}>
                 
-                {/* Close button */}
+                {/* Bouton pour fermer */}
                 <div className="flex justify-end mb-4">
                     <button 
                         onClick={onClose}
@@ -16,7 +16,7 @@ export default function About({ onClose }: { onClose: () => void }) {
                     </button>
                 </div>
 
-                {/* Title */}
+                {/* Titre */}
                 <h1 className="text-3xl mb-6 text-center" 
                     style={{ color: 'rgba(0,255,255, 0.67)', textShadow: '0 3px 20px rgba(0,255,255, 0.7)' }}>
                     À propos de Meteo Explorer
@@ -81,7 +81,7 @@ export default function About({ onClose }: { onClose: () => void }) {
                     </div>
                 </div>
 
-                {/* Author */}
+                {/* Auteur */}
                 <div className="space-y-4">
                     <h2 className="text-xl mb-3" style={{ color: 'rgba(0,255,255, 0.8)' }}>
                         Développeur

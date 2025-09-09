@@ -110,7 +110,7 @@ export default function Home() {
       );
       const data = await res.json();
       
-      // Check if address exists and has location data
+      // Vérifie si l'adresse existe
       if (data.address) {
         setCity(
           data.address.city ||
@@ -120,7 +120,7 @@ export default function Home() {
             "Coordonnées GPS"
         );
       } else {
-        // No address found (ocean, remote area, etc.)
+        // Si pas d'adresse...
         setCity("Coordonnées GPS");
       }
     } catch (error) {
@@ -204,7 +204,7 @@ export default function Home() {
           setCoords(c);
           fetchWeather(c.lat, c.lng);
           fetchCity(c.lat, c.lng);
-          setQuery(""); // Clear search bar when clicking on globe
+          setQuery(""); // Vide la barre de recherche quand on clique sur le globe
         }}
       />
         )}
@@ -456,7 +456,7 @@ export default function Home() {
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && searchCity()}
-                  placeholder="Tapez une ville..."
+                  placeholder="Tape une ville..."
                   className="flex-1 px-2 py-2 bg-transparent outline-none 
                              text-cyan-100 placeholder-cyan-400/50 tracking-wide"
                 />
