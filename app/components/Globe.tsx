@@ -31,7 +31,7 @@ const Globe = dynamic(() => import("react-globe.gl"), {
 });
 
 export default function Home() {
-  const globeRef = useRef<any>();
+  const globeRef = useRef<HTMLDivElement | null>(null);
   const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [temperature, setTemperature] = useState<number | null>(null);
   const [city, setCity] = useState<string | null>(null);
@@ -58,11 +58,11 @@ export default function Home() {
       // Force le redimensionnement du globe après un délai
       if (globeRef.current) {
         setTimeout(() => {
-          const canvas = globeRef.current?.scene()?.children[0]?.children.find(
-            (child: any) => child.type === 'WebGLRenderer'
+          const canvas = (globeRef.current as unknown as { scene: () => { children: Array<{ children: Array<{ type: string }> }> } })?.scene()?.children[0]?.children.find(
+            (child: { type: string }) => child.type === 'WebGLRenderer'
           );
           if (canvas) {
-            globeRef.current?.renderer().setSize(window.innerWidth, window.innerHeight);
+            (globeRef.current as unknown as { renderer: () => { setSize: (w: number, h: number) => void } })?.renderer().setSize(window.innerWidth, window.innerHeight);
           }
         }, 100);
       }
@@ -139,7 +139,7 @@ export default function Home() {
       setCoords({ lat: latNum, lng: lngNum });
       setCity(display_name);
       fetchWeather(latNum, lngNum);
-      globeRef.current?.pointOfView(
+      (globeRef.current as unknown as { pointOfView: (view: { lat: number; lng: number; altitude: number }, duration: number) => void })?.pointOfView(
         { 
           lat: isMobile ? latNum - 20 : latNum, // Décalage vers le sud sur mobile
           lng: lngNum, 
@@ -172,10 +172,10 @@ export default function Home() {
           globeImageUrl={isDayMode ? "https://cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg" : "textures/BlackMarble_2016_3km.jpg"}
           backgroundImageUrl="https://cdn.jsdelivr.net/npm/three-globe/example/img/night-sky.png"
           ringsData={ringsData}
-          ringColor={(d: any) => d.color}
-          ringMaxRadius={(d: any) => d.maxRadius}
-          ringPropagationSpeed={(d: any) => d.propagationSpeed}
-          ringRepeatPeriod={(d: any) => d.repeatPeriod}
+          ringColor={(d: { color: string }) => d.color}
+          ringMaxRadius={(d: { maxRadius: number }) => d.maxRadius}
+          ringPropagationSpeed={(d: { propagationSpeed: number }) => d.propagationSpeed}
+          ringRepeatPeriod={(d: { repeatPeriod: number }) => d.repeatPeriod}
           // Customisation de l'atmosphère et de l'éclairage
           showAtmosphere={true}
           atmosphereColor="rgb(0,255,255)"
@@ -188,7 +188,7 @@ export default function Home() {
         onGlobeReady={() => {
           if (globeRef.current) {
             // Décale la vue selon le mode desktop/mobile
-            globeRef.current.pointOfView({ 
+            (globeRef.current as unknown as { pointOfView: (view: { lat: number; lng: number; altitude: number }, duration: number) => void }).pointOfView({ 
               lat: isMobile ? -30 : 0, // Décalage vers le sud sur mobile
               lng: isMobile ? 30 : 50, // Moins de décalage est sur mobile
               altitude: isMobile ? 4.5 : 2.5 // Plus éloigné sur mobile
