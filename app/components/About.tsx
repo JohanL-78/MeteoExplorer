@@ -48,7 +48,7 @@ export default function About({ onClose }: { onClose: () => void }) {
         <div className="flex items-start justify-between mb-8">
           <div>
             <p className={`${fm} text-[10px] uppercase tracking-[0.26em] text-[#2F6F73] mb-3`}>
-              // À propos
+              {'// À propos'}
             </p>
             <h1 className={`${fd} text-2xl md:text-3xl font-semibold tracking-[-0.04em] text-[#F6F1E8]`}>
               Meteo Explorer
@@ -72,7 +72,7 @@ export default function About({ onClose }: { onClose: () => void }) {
         {/* Technologies */}
         <section className="mb-8">
           <p className={`${fm} text-[10px] uppercase tracking-[0.26em] text-[#2F6F73] mb-4`}>
-            // Technologies
+            {'// Technologies'}
           </p>
           <div className="space-y-0">
             {techStack.map(([name, desc]) => (
@@ -91,7 +91,7 @@ export default function About({ onClose }: { onClose: () => void }) {
         {/* APIs */}
         <section className="mb-8">
           <p className={`${fm} text-[10px] uppercase tracking-[0.26em] text-[#2F6F73] mb-4`}>
-            // APIs
+            {'// APIs'}
           </p>
           <div className="grid grid-cols-1 gap-4">
             {apis.map(([name, desc]) => (
@@ -111,7 +111,7 @@ export default function About({ onClose }: { onClose: () => void }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <section>
             <p className={`${fm} text-[10px] uppercase tracking-[0.26em] text-[#2F6F73] mb-4`}>
-              // Remerciements
+              {'// Remerciements'}
             </p>
             <div className="space-y-2">
               {credits.map(([name, role]) => (
@@ -125,7 +125,7 @@ export default function About({ onClose }: { onClose: () => void }) {
 
           <section>
             <p className={`${fm} text-[10px] uppercase tracking-[0.26em] text-[#2F6F73] mb-4`}>
-              // Développeur
+              {'// Développeur'}
             </p>
             <p className={`${fd} text-base font-semibold text-[#F6F1E8]/80 mb-4`}>Johan Lorck</p>
             <a

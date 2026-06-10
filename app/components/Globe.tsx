@@ -256,7 +256,7 @@ export default function Home() {
                   <div className="flex justify-between items-start mb-5">
                     <div>
                       <p className={`${fm} text-[9px] uppercase tracking-[0.26em] text-[#2F6F73] mb-1`}>
-                        // Météo Détaillée
+                        {'// Météo Détaillée'}
                       </p>
                       <h3 className={`${fd} text-base font-semibold tracking-[-0.03em] text-[#F6F1E8]`}>
                         {city || "Sélectionner un lieu"}
@@ -304,7 +304,7 @@ export default function Home() {
                       {forecast.length > 0 && (
                         <div className="mt-4">
                           <p className={`${fm} text-[9px] uppercase tracking-[0.22em] text-[#2F6F73] mb-3`}>
-                            // Prévisions 7 jours
+                            {'// Prévisions 7 jours'}
                           </p>
                           <div className="space-y-1">
                             {forecast.map((day, index) => (
@@ -411,7 +411,7 @@ export default function Home() {
               {/* Header desktop */}
               <div className="flex justify-between items-center mb-5">
                 <p className={`${fm} text-[10px] uppercase tracking-[0.26em] text-[#2F6F73]`}>
-                  // Météo Globe
+                  {'// Météo Globe'}
                 </p>
                 <div className="flex items-center gap-1">
                   <button
@@ -529,7 +529,7 @@ export default function Home() {
                       transition={{ duration: 0.5, delay: 0.2 }}
                     >
                       <p className={`${fm} text-[10px] uppercase tracking-[0.22em] text-[#2F6F73] mb-3`}>
-                        // Prévisions 7 jours
+                        {'// Prévisions 7 jours'}
                       </p>
                       <div className="space-y-0">
                         {forecast.map((day, index) => (
