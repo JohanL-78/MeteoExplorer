@@ -1,9 +1,13 @@
-import { Orbitron } from "next/font/google";
+import { Inter_Tight, Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/react';
 import type { Metadata, Viewport } from 'next';
 
-const orbitron = Orbitron({ subsets: ["latin"], weight: ["400","700"] });
+import { JetBrains_Mono } from "next/font/google";
+
+const interTight = Inter_Tight({ subsets: ["latin"], weight: ["400","500","600","700","800"], variable: "--font-display" });
+const inter = Inter({ subsets: ["latin"], weight: ["300","400","500","600"], variable: "--font-body" });
+const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], weight: ["400","500"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
   title: 'Meteo Explorer - Globe météorologique interactif 3D',
@@ -45,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="dns-prefetch" href="https://nominatim.openstreetmap.org" />
         <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
       </head>
-      <body className={orbitron.className}>
+      <body className={`${interTight.variable} ${inter.variable} ${jetbrainsMono.variable} font-[family-name:var(--font-body)]`}>
         {children}
         <Analytics />
       </body>
